@@ -9,18 +9,55 @@
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class indexController
+class indexController extends AbstractController
 {
     /**
-     * @Route("/{name}", name="home")
+     * @Route("/", name="home")
      */
-    public function hello($name)
+    public function hello()
+    {
+
+        $languages = [
+            'Demain',
+            'Lola',
+            'Central Park',
+            'Hier',
+            "l'indian",
+        ];
+
+        return $this->render('index.html.twig' , [
+
+                'languages' => $languages
+
+    ]);
+    }
+
+    /**
+     * @Route("/{language}", name="show")
+     */
+    public function index($language)
     {
         // do stuff
 
-        return new Response("Hello $name !");
+        return $this->render('show.html.twig', [
+            'select_language' => $language,
+        ]);
+
     }
+
+    /**
+     * @Route("/symfony/contact", name="contact")
+     */
+    public function contact()
+    {
+        // do stuff
+
+        return $this->render('contact.html.twig');
+
+    }
+
 
 }

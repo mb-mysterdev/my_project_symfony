@@ -1,12 +1,28 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Materialize Starter template</title>
+
+    <!-- CSS  -->
+    <link href="{{ asset('css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon (7).ico" type="image/x-icon">
+    <link rel="icon" href="favicon (7).ico" type="image/x-icon">
+</head>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Symfony</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{ path('home') }}">Acceuil</a></li>
+            <li><a href="{{ path('contact') }}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+{% block body %}
+    <h1>hi</h1>
+{% endblock %}

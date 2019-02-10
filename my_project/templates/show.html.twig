@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+        {% block body %}
+            {% if select_language == 'java' %}
+            On aime pas
+                {% else %}
+            <h1>Vous avez choisie le langage {{ select_language }}  </h1>
+            <a href="{{ path('home') }}">Home</a>
+            {% endif %}
+
+        {% endblock %}
